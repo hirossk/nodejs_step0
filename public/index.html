@@ -1,30 +1,9 @@
 <!DOCTYPE html>
 <html>
-
 <head>
   <title>Sample</title>
 </head>
 <body>
-  <button id="sendbutton">send</button>
-  <div>view area</div>
-  <div id="result"></div>
+  <h1>Apple Orange Banana</h1>
 </body>
 </html>
-<script>
-    {
-      const button = document.getElementById('sendbutton');
-      const result = document.getElementById('result');
-    
-      button.addEventListener('click', function() {
-        const form = document.querySelector('form');
-        const xhr = new XMLHttpRequest();
-        xhr.withCredentials = true;
-        xhr.open('GET', 'http://localhost:3000/api/todos');
-	//受信が成功した時に呼び出される
-        xhr.onload = function() {
-          result.textContent = xhr.response;
-        };
-        xhr.send();
-      });
-    }
-</script>

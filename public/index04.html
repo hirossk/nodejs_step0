@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Sample</title>
+</head>
+<body>
+  <div>view area</div>
+  <div id="result"></div>
+  <button id="sendbutton">send</button>
+</body>
+</html>
+<script>
+    {
+      const button = document.getElementById('sendbutton');
+      const result = document.getElementById('result');
+    
+      button.addEventListener('click', function() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'http://localhost:3000/');
+        xhr.send();
+        result.innerHTML = "<h1>Requiest Sended!</h1>"
+      });
+    }
+</script>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sample</title>
+</head>
+<body>
+  <div>view area</div>
+  <div id="result"></div>
+  <button id="sendbutton">send</button>
+</body>
+</html>
+<script>
+    {
+      const button = document.getElementById('sendbutton');
+      const result = document.getElementById('result');
+    
+      button.addEventListener('click', function() {
+        result.innerHTML = "<h1>Button Pushed!!</h1>"
+      });
+    }
+</script>
