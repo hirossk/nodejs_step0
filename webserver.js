@@ -9,7 +9,7 @@ app.listen(3000, () => {
 });
 
 app.use(express.json()); // JSONデータ解析のため
-
+app.use(express.urlencoded({ extended: true })); // リクエストボディの解析のため
 //JSONデータの準備
 const todos = [
     { id: 1, todo: "Game" },
@@ -24,16 +24,18 @@ app.get("/api/todos", (req, res) => {
 });
 
 //todoの登録
+
+
 app.post("/api/todos", (req, res) => {
-    // 新たなToDoを宣言
-    const newTodo = {
-      id: todos.length + 1,
-      todo: req.body.todo
-    };
-    // todosに新たなユーザを追加
-    todos.push(newTodo);
-    // todosを返す
-    res.send(todos);
+  // 新たなToDoを宣言
+  const newTodo = {
+    id: todos.length + 1,
+    todo: req.body.todo
+  };
+  // todosに新たなユーザを追加
+  todos.push(newTodo);
+  // todosを返す
+  res.send(todos);
 });
 
 //データの更新
